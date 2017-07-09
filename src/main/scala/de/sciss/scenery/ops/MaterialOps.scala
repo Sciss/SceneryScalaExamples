@@ -21,4 +21,7 @@ final class MaterialOps(private val peer: KtMaterial) extends AnyVal {
 
   def doubleSided: Boolean = getDoubleSided
   def doubleSided_=(value: Boolean): Unit = setDoubleSided(value)
+
+  def transparent: Boolean = getTransparent
+  def transparent_=(value: Boolean): Unit = setTransparent(value)
 }
