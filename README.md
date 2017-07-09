@@ -23,6 +23,11 @@ to install them inside the project's base directory.
 Note that you get an eviction warning `graphics.scenery:spirvcrossj:0.2.4 -> 0.2.6`. This is because I could not
 use the 0.2.4 version from Maven Central. So far this did not seem to cause problems.
 
+## notes
+
+ - `FontRenderingExample` - I haven't run this yet, it needs native Jogamp libraries which are not yet automatically installed
+ - `BileExample` - the original mesh file is not available; I tried to use a teapot mesh, but can't see anything
+
 ## contributing
 
 Please see the file [CONTRIBUTING.md](CONTRIBUTING.md)

@@ -7,6 +7,11 @@ import graphics.scenery.SceneryElement
 object TexturedCubeExampleApp extends App {
   (new TexturedCubeExample).main()
 }
+
+/**
+  * @author Ulrik Günther <hello@ulrik.is>
+  * @author Hanns Holger Rutz <contact@sciss.de>
+  */
 class TexturedCubeExample extends SceneryScalaApp("scenery - TexturedCubeExample", 800, 600) {
   override def init(): Unit = {
     renderer = createRenderer(hub, applicationName, scene, 512, 512)

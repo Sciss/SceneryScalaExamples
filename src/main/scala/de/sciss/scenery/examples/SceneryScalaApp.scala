@@ -6,6 +6,7 @@ import graphics.scenery.backends.Renderer
 import graphics.scenery.controls.InputHandler
 import graphics.scenery.repl.{REPL => KtREPL}
 import graphics.scenery.{Hub, Scene, SceneryDefaultApplication}
+import org.slf4j.Logger
 
 abstract class SceneryScalaApp(val applicationName: String, val windowWidth: Int = 1024,
                                val windowHeight: Int = 1024, val wantREPL: Boolean = true)
@@ -22,6 +23,8 @@ abstract class SceneryScalaApp(val applicationName: String, val windowWidth: Int
   def repl_=(value: KtREPL): Unit = setRepl(value)
 
   def running: Boolean = getRunning
+
+  def logger: Logger = getLogger
 
   def createRenderer(hub: Hub, appName: String, scene: Scene, winWidth: Int, winHeight: Int): Renderer =
     ScalaAccessors.createRenderer(hub, appName, scene, winWidth, winHeight)

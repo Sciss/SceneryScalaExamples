@@ -8,6 +8,10 @@ object FontRenderingExampleApp extends App {
   (new FontRenderingExample).main()
 }
 
+/**
+  * @author Ulrik Günther <hello@ulrik.is>
+  * @author Hanns Holger Rutz <contact@sciss.de>
+  */
 class FontRenderingExample extends SceneryScalaApp("FontRenderingExample") {
   override def init(): Unit = {
     renderer = createRenderer(hub, applicationName, scene, windowWidth, windowHeight)

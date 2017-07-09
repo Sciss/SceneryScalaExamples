@@ -17,6 +17,9 @@ final class MaterialOps(private val peer: KtMaterial) extends AnyVal {
   def specular: JGLVector = getSpecular
   def specular_=(value: JGLVector): Unit = setSpecular(value)
 
+  def specularExponent: Float = getSpecularExponent
+  def specularExponent_=(value: Float): Unit = setSpecularExponent(value)
+
   def textures: ConcurrentHashMap[String, String] = getTextures
 
   def doubleSided: Boolean = getDoubleSided
