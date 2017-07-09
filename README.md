@@ -29,6 +29,7 @@ use the 0.2.4 version from Maven Central. So far this did not seem to cause prob
  - `FontRenderingExample` - I haven't run this yet, it needs native Jogamp libraries which are not yet automatically installed
  - `BileExample` - the original mesh file is not available; I tried to use a teapot mesh, but can't see anything
  - `ClusterExample` - seems not to be working, and needs `Volume` class which is not available in scenery 0.1.0
+ - `MultiBoxExample` - extremely slow on my computer, perhaps because it runs from Intel graphics card?
 
 ## contributing
 

@@ -130,15 +130,15 @@ class BloodCellsExample extends SceneryScalaApp("BloodCellsExample", windowWidth
     val posRange = 1200.0f
     val container = Node("Cell container")
 
-    val leucocytes = Seq.fill(100) {
+    val leucocytes = Seq.tabulate(100) { i =>
       val v = Mesh()
-      v.name = "leucocyte_$it"
+      v.name = s"leucocyte_$i"
       v.instanceOf = leucocyte
       v.instancedProperties.put("ModelViewMatrix" , () => v.modelView )
       v.instancedProperties.put("ModelMatrix"     , () => v.model     )
       v.instancedProperties.put("MVP"             , () => v.mvp       )
 
-      val p = Node("parent of it")
+      val p = Node(s"parent of $i")
       val scale = Numerics.randomFromRange(30.0f, 40.0f)
 
       v.material = l_material
@@ -159,15 +159,15 @@ class BloodCellsExample extends SceneryScalaApp("BloodCellsExample", windowWidth
       v
     }
 
-    val erythrocytes = Seq.fill(2000) {
+    val erythrocytes = Seq.tabulate(2000) { i =>
       val v = Mesh()
-      v.name = "erythrocyte_$it"
+      v.name = s"erythrocyte_$i"
       v.instanceOf = e_mesh
       v.instancedProperties.put("ModelViewMatrix" , () => v.modelView )
       v.instancedProperties.put("ModelMatrix"     , () => v.model     )
       v.instancedProperties.put("MVP"             , () => v.mvp       )
 
-      val p = Node("parent of it")
+      val p = Node(s"parent of $i")
       val scale = Numerics.randomFromRange(5f, 12f)
 
       v.material  = e_material
