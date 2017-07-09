@@ -1,4 +1,4 @@
-# SceneryTest
+# SceneryScalaExamples
 
 This is a small Scala project that looks at the examples for the [scenery](https://github.com/scenerygraphics/scenery) 3D rendering library.
 The original examples are in Kotlin and Java, so I added a few extension methods to make have clean code.
