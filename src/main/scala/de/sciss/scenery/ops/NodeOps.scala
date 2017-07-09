@@ -25,6 +25,9 @@ final class NodeOps(private val peer: KtNode) extends AnyVal {
   def needsUpdate: Boolean = getNeedsUpdate
   def needsUpdate_=(value: Boolean): Unit = setNeedsUpdate(value)
 
+  def needsUpdateWorld: Boolean = getNeedsUpdateWorld
+  def needsUpdateWorld_=(value: Boolean): Unit = setNeedsUpdateWorld(value)
+
   def rotation: Quaternion = getRotation
   def rotation_=(value: Quaternion): Unit = setRotation(value)
 
