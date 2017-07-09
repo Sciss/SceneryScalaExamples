@@ -16,6 +16,10 @@ This project compiles against Scala 2.12, using sbt 0.13. To run the examples, j
 select the number of the example. For convenience, the [sbt extras]() script by Paul Phillips is included,
 licensed under BSD 3-clause. So if you do not want to install sbt, just use `./sbt run`.
 
+Some demos, such as `BoxedProteinExample` require models that have to be [downloaded separately](https://github.com/scenerygraphics/scenery#examples),
+because they are quite large (over 100 MB zipped). However, you can just use `sbt download-demo-models`
+to install them inside the project's base directory.
+
 Note that you get an eviction warning `graphics.scenery:spirvcrossj:0.2.4 -> 0.2.6`. This is because I could not
 use the 0.2.4 version from Maven Central. So far this did not seem to cause problems.
 

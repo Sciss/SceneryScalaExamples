@@ -7,6 +7,14 @@ import graphics.scenery.utils.Numerics
 object ArcballExampleApp extends App {
   (new ArcballExample).main()
 }
+/**
+  * This example demonstrates how to use the TargetArcBallBehaviour and how
+  * to modify the default behaviour/key map of scenery, and also manually
+  * trigger behaviours. See also [SceneryDefaultApplication.setupCameraModeSwitching].
+  *
+  * @author Ulrik Günther <hello@ulrik.is>
+  * @author Hanns Holger Rutz <contact@sciss.de>
+  */
 class ArcballExample extends SceneryScalaApp("ArcballExample") {
   override def init(): Unit = {
     renderer = createRenderer(hub, applicationName, scene, 1024, 1024)
@@ -55,5 +63,14 @@ class ArcballExample extends SceneryScalaApp("ArcballExample") {
         Thread.sleep(20)
       }
     }
+  }
+
+  override def inputSetup(): Unit = {
+    // note: it seems `setupCameraModeSwitching` is not available in scenery 0.1.0
+
+//    setupCameraModeSwitching(keybinding = "C")
+//
+//    // switch to arcball mode by manually triggering the behaviour
+//    inputHandlerOption.foreach(h => (h.getBehaviour("toggle_control_mode").asInstanceOf[ClickBehaviour]).click(0, 0))
   }
 }

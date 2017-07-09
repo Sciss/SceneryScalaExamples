@@ -1,6 +1,6 @@
 package de.sciss.scenery
 
-import graphics.scenery.{Box => KtBox, Camera => KtCamera, DetachedHeadCamera => KtDetachedHeadCamera, Material => KtMaterial, Node => KtNode, PointLight => KtPointLight}
+import graphics.scenery.{Mesh => KtMesh, Box => KtBox, Camera => KtCamera, DetachedHeadCamera => KtDetachedHeadCamera, Material => KtMaterial, Node => KtNode, PointLight => KtPointLight}
 import graphics.scenery.backends.{Renderer => KtRenderer}
 import cleargl.{GLMatrix => JGLMatrix, GLVector => JGLVector}
 import graphics.scenery.backends.{SceneryWindow => KtSceneryWindow}
@@ -15,6 +15,7 @@ package object examples {
   def Box       (sizes: JGLVector     ): KtBox                = new KtBox       (sizes)
   def PointLight()                     : KtPointLight         = new KtPointLight
   def DetachedHeadCamera()             : KtDetachedHeadCamera = new KtDetachedHeadCamera
+  def Mesh      ()                     : KtMesh               = new KtMesh
 
   def REPL(accessibleObjects: AnyRef*): KtREPL = new KtREPL(accessibleObjects: _*)
 
@@ -25,4 +26,5 @@ package object examples {
   implicit def wrap(w: KtSceneryWindow): SceneryWindowOps     = new SceneryWindowOps(w)
   implicit def wrap(c: KtCamera       ): CameraOps            = new CameraOps       (c)
   implicit def wrap(v: JGLVector      ): GLVectorOps          = new GLVectorOps     (v)
+  implicit def wrap(m: KtMesh         ): MeshOps              = new MeshOps         (m)
 }
