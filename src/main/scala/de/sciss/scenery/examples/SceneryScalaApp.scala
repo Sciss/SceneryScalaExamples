@@ -6,6 +6,7 @@ import graphics.scenery.backends.Renderer
 import graphics.scenery.controls.InputHandler
 import graphics.scenery.repl.{REPL => KtREPL}
 import graphics.scenery.{Hub, Scene, SceneryDefaultApplication}
+import kotlin.jvm.functions
 import org.slf4j.Logger
 
 abstract class SceneryScalaApp(val applicationName: String, val windowWidth: Int = 1024,
@@ -42,4 +43,7 @@ abstract class SceneryScalaApp(val applicationName: String, val windowWidth: Int
     if (sys.env.contains("SCENERY_DEMO_FILES") || !f.exists()) getDemoFilesPath
     else f.getPath
   }
+
+  def updateFunction: functions.Function0[Unit /* AnyRef */] = getUpdateFunction.asInstanceOf[functions.Function0[Unit]]
+  def updateFunction_=(value: functions.Function0[Unit]): Unit = setUpdateFunction(value)
 }

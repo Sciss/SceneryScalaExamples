@@ -1,10 +1,11 @@
 package de.sciss.scenery
 
 import cleargl.{GLMatrix, GLVector => JGLVector}
+import com.jogamp.opengl.math.Quaternion
 import de.sciss.scenery.ops.{CameraOps, FontBoardOps, GLVectorOps, LineOps, MaterialOps, MeshOps, NodeOps, PointLightOps, RendererOps, SceneryWindowOps}
 import graphics.scenery.backends.{Renderer, SceneryWindow}
 import graphics.scenery.repl.REPL
-import graphics.scenery.{Box, Camera, DetachedHeadCamera, FontBoard, Line, Material, Mesh, Node, PointLight}
+import graphics.scenery.{Box, Camera, DetachedHeadCamera, FontBoard, Line, Material, Mesh, Node => KtNode, PointLight}
 
 import scala.language.implicitConversions
 
@@ -13,11 +14,15 @@ object Ops {
   def DetachedHeadCamera()             : DetachedHeadCamera = new DetachedHeadCamera
   def FontBoard ()                     : FontBoard          = new FontBoard
   def GLMatrix  ()                     : GLMatrix           = new GLMatrix
-//  def GLVector  (elems: Float*        ): GLVector           = new GLVector   (elems: _*)
   def Line      ()                     : Line               = new Line
   def Material  ()                     : Material           = new Material
   def Mesh      ()                     : Mesh               = new Mesh
+  def Node      (name: String)         : Node               = new Node(name)
   def PointLight()                     : PointLight         = new PointLight
+  def Quaternion()                     : Quaternion         = new Quaternion
+//  def Volume    ()                     : Volume             = new Volume
+
+  type Node = KtNode
 
   object GLVector {
     def apply(elems: Float*): JGLVector = new JGLVector(elems: _*)

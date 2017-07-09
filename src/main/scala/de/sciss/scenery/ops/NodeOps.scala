@@ -1,10 +1,12 @@
 package de.sciss.scenery.ops
 
+import java.util
 import java.util.concurrent.CopyOnWriteArrayList
 
-import cleargl.{GLVector => JGLVector}
+import cleargl.{GLMatrix, GLVector => JGLVector}
 import com.jogamp.opengl.math.Quaternion
-import graphics.scenery.{Material => KtMaterial, Node => KtNode}
+import graphics.scenery.{NodeMetadata, Material => KtMaterial, Node => KtNode}
+import kotlin.jvm.functions
 
 final class NodeOps(private val peer: KtNode) extends AnyVal {
   import peer._
@@ -26,7 +28,26 @@ final class NodeOps(private val peer: KtNode) extends AnyVal {
   def rotation: Quaternion = getRotation
   def rotation_=(value: Quaternion): Unit = setRotation(value)
 
+  def initialized: Boolean = getInitialized
+
+  def visible: Boolean = getVisible
+  def visible_=(value: Boolean): Unit = setVisible(value)
+
+  def instanceOf: KtNode = getInstanceOf
+  def instanceOf_=(value: KtNode): Unit = setInstanceOf(value)
+
+  def instanceMaster: Boolean = getInstanceMaster
+  def instanceMaster_=(value: Boolean): Unit = setInstanceMaster(value)
+
+  def instancedProperties: util.LinkedHashMap[String, functions.Function0[AnyRef]] = getInstancedProperties
+
   def parentOption: Option[KtNode] = Option(getParent)
 
   def children: CopyOnWriteArrayList[KtNode] = getChildren
+
+  def metadata: util.HashMap[String, NodeMetadata] = getMetadata
+
+  def model     : GLMatrix = getModel
+  def modelView : GLMatrix = getModelView
+  def mvp       : GLMatrix = getMvp
 }

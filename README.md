@@ -13,7 +13,8 @@ absolutely no warranties. To contact the author, send an email to `contact at sc
 ## requirements / running
 
 This project compiles against Scala 2.12, using sbt 0.13. To run the examples, just use `sbt run` and
-select the number of the example. For convenience, the [sbt extras]() script by Paul Phillips is included,
+select the number of the example (for example the one of `BloodCellsExample`).
+For convenience, the [sbt extras]() script by Paul Phillips is included,
 licensed under BSD 3-clause. So if you do not want to install sbt, just use `./sbt run`.
 
 Some demos, such as `BoxedProteinExample` require models that have to be [downloaded separately](https://github.com/scenerygraphics/scenery#examples),
@@ -27,6 +28,7 @@ use the 0.2.4 version from Maven Central. So far this did not seem to cause prob
 
  - `FontRenderingExample` - I haven't run this yet, it needs native Jogamp libraries which are not yet automatically installed
  - `BileExample` - the original mesh file is not available; I tried to use a teapot mesh, but can't see anything
+ - `ClusterExample` - seems not to be working, and needs `Volume` class which is not available in scenery 0.1.0
 
 ## contributing
 
