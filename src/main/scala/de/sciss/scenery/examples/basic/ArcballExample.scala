@@ -3,6 +3,7 @@ package basic
 
 import graphics.scenery.SceneryElement
 import graphics.scenery.utils.Numerics
+import de.sciss.scenery.Ops._
 
 object ArcballExampleApp extends App {
   (new ArcballExample).main()

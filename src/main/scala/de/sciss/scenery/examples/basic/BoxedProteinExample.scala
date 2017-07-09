@@ -1,8 +1,10 @@
 package de.sciss.scenery.examples
 package basic
 
+import de.sciss.scenery.Ops._
 import graphics.scenery.SceneryElement
 import graphics.scenery.utils.Numerics
+
 import scala.collection.JavaConverters._
 
 object BoxedProteinExampleApp extends App {

@@ -16,12 +16,12 @@ abstract class SceneryScalaApp(val applicationName: String, val windowWidth: Int
 
   def hub: Hub = getHub
 
-//  def applicationName: String = getApplicationName
-
   def scene: Scene = getScene
 
   def repl: KtREPL = getRepl
   def repl_=(value: KtREPL): Unit = setRepl(value)
+
+  def running: Boolean = getRunning
 
   def createRenderer(hub: Hub, appName: String, scene: Scene, winWidth: Int, winHeight: Int): Renderer =
     ScalaAccessors.createRenderer(hub, appName, scene, winWidth, winHeight)

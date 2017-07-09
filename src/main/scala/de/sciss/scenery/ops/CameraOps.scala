@@ -1,4 +1,4 @@
-package de.sciss.scenery.examples
+package de.sciss.scenery.ops
 
 import cleargl.{GLMatrix => JGLMatrix, GLVector => JGLVector}
 import graphics.scenery.{Camera => KtCamera}

@@ -1,6 +1,7 @@
 package de.sciss.scenery.examples
 package basic
 
+import de.sciss.scenery.Ops._
 import graphics.scenery.SceneryElement
 
 object TexturedCubeExampleApp extends App {
